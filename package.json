@@ -7,6 +7,7 @@
     "test": "react-scripts test",
     "lint": "eslint src/**/*.ts[x]"
   },
+  "main": "src/index.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/swjb-sinamon/sikhye.git"
