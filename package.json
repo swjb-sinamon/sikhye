@@ -1,5 +1,5 @@
 {
-  "name": "@sinamon/sikhye",
+  "name": "sinamon-sikhye",
   "version": "1.0.1",
   "scripts": {
     "start": "react-scripts start",
