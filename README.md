@@ -1,6 +1,8 @@
 # Sikhye (식혜)
 
-> 수정과 프로젝트 UI 컴포넌트, 유틸 라이브러리
+![issues](https://img.shields.io/github/issues/swjb-sinamon/sikhye?style=for-the-badge) ![npm](https://img.shields.io/npm/v/@sinamon/sikhye?style=for-the-badge)
+
+수정과 프로젝트 UI 컴포넌트, 유틸 라이브러리
 
 ## 구조
 ### Atomics
