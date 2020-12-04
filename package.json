@@ -1,5 +1,5 @@
 {
-  "name": "sikhye",
+  "name": "@sinamon/sikhye",
   "version": "1.0.0",
   "scripts": {
     "start": "react-scripts start",
@@ -16,6 +16,7 @@
   "bugs": {
     "url": "https://github.com/swjb-sinamon/sikhye/issues"
   },
+  "keywords": ["sinamon", "swjb"],
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
     "@fortawesome/free-brands-svg-icons": "^5.14.0",
