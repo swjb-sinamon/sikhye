@@ -30,6 +30,7 @@
     "react-dom": "^17.0.1",
     "react-modal": "^3.12.1",
     "react-notifications-component": "^3.0.3",
+    "react-router-dom": "^5.2.0",
     "styled-components": "^5.2.1"
   },
   "devDependencies": {
@@ -38,6 +39,7 @@
     "@types/react-dom": "^17.0.0",
     "@types/react-modal": "^3.10.6",
     "@types/react-notifications-component": "^2.4.0",
+    "@types/react-router-dom": "^5.1.6",
     "@types/styled-components": "^5.1.4",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^6.15.0",
