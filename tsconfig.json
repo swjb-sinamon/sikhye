@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "outDir": "./lib",
     "target": "es5",
     "lib": [
       "dom",
@@ -18,7 +19,11 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react",
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "typeRoots": [
+      "index.d.ts",
+      "node_modules/@types"
+    ]
   },
   "include": [
     "src"
