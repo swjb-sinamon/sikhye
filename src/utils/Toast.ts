@@ -2,7 +2,7 @@ import { store } from 'react-notifications-component';
 
 type MessageType = 'success' | 'danger' | 'info' | 'default' | 'warning';
 
-const showToast = (message: string, type: MessageType) => {
+const showToast = (message: string, type: MessageType): void => {
   store.addNotification({
     message,
     type,
