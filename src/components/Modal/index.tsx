@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import ReactModal from 'react-modal';
+import { SCREEN_SIZE } from '../../styles';
 
 const StyledModal = styled(ReactModal)<{ width: number; height: number }>`
   position: absolute;
@@ -22,6 +23,11 @@ const StyledModal = styled(ReactModal)<{ width: number; height: number }>`
 
   &:focus {
     outline: none;
+  }
+
+  @media screen and (max-width: ${SCREEN_SIZE.SCREEN_MOBILE}) {
+    width: 95%;
+    height: 80%;
   }
 `;
 
