@@ -33,10 +33,8 @@ const StyledModal = styled(ReactModal)<{ width: number; height: number }>`
 
 const CancelButton = styled.button`
   position: absolute;
-  top: 0;
-  right: 0;
-  left: 92%;
-  bottom: 87%;
+  top: 20px;
+  right: 20px;
 
   border: none;
   background: transparent;
