@@ -1,7 +1,6 @@
-import React from 'react';
 import styled from 'styled-components';
 
-const StyledButtonGroup = styled.div`
+const ButtonGroup = styled.div`
   & button {
     margin-right: 1rem;
   }
@@ -10,9 +9,5 @@ const StyledButtonGroup = styled.div`
     margin-right: 0;
   }
 `;
-
-const ButtonGroup: React.FC = ({ children }) => {
-  return <StyledButtonGroup>{children}</StyledButtonGroup>;
-};
 
 export default ButtonGroup;
