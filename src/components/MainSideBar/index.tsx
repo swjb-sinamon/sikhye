@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import SCREEN_SIZE from '../../styles/screen-size';
 

@@ -1,13 +1,12 @@
 import styled from 'styled-components';
 import SCREEN_SIZE from '../../styles/screen-size';
 
-const MainSideBarItem = styled.li`
+export const MainSideBarItem = styled.li`
   display: flex;
   flex-direction: row;
   align-items: center;
 
   padding: 1.2rem 2rem;
-  border-bottom: 1px solid var(--color-gray);
 
   cursor: pointer;
   transition: all 0.3s ease-in-out;
@@ -26,4 +25,9 @@ const MainSideBarItem = styled.li`
   }
 `;
 
-export default MainSideBarItem;
+export const SideBarIconWrapper = styled.div`
+  min-width: 28px;
+  height: auto;
+
+  margin-right: 10px;
+`;
