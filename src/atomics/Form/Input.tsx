@@ -9,6 +9,11 @@ const Input = styled.input<{ width?: number }>`
 
   border-radius: 3px;
   border: 1px solid var(--color-gray);
+
+  :disabled {
+    cursor: no-drop;
+    background-color: #efefef;
+  }
 `;
 
 export default Input;
