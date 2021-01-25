@@ -1,6 +1,6 @@
 {
   "name": "sinamon-sikhye",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
