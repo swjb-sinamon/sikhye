@@ -15,6 +15,11 @@ const Select = styled.select`
   background-repeat: no-repeat;
   background-position-x: 98%;
   background-position-y: 50%;
+
+  :disabled {
+    cursor: no-drop;
+    background-color: #efefef;
+  }
 `;
 
 export default Select;
