@@ -48,7 +48,7 @@ interface PaginationProps {
 
 const PAGE_PER_GROUP = 5; // 한 그룹당 표시되는 페이지 개수
 
-const PTest: React.FC<PaginationProps> = ({ onPageChange, dataCount, pageLimit }) => {
+const Pagination: React.FC<PaginationProps> = ({ onPageChange, dataCount, pageLimit }) => {
   const [numberComponents, setNumberComponents] = useState<JSX.Element[]>([]);
 
   const [offset, setOffset] = useState<number>(1);
@@ -77,7 +77,7 @@ const PTest: React.FC<PaginationProps> = ({ onPageChange, dataCount, pageLimit }
     }
 
     setPageGroup((current) => {
-      const nextOffset = (current + 1) * PAGE_PER_GROUP;
+      const nextOffset = Math.min(pageCount, (current + 1) * PAGE_PER_GROUP);
       setOffset(nextOffset);
       onPageChange(nextOffset);
       return current + 1;
@@ -123,4 +123,4 @@ const PTest: React.FC<PaginationProps> = ({ onPageChange, dataCount, pageLimit }
   );
 };
 
-export default PTest;
+export default Pagination;
