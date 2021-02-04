@@ -17,5 +17,8 @@ module.exports = {
     'no-console': 'off',
     'linebreak-style': 'off',
     'no-use-before-define': 'off'
+  },
+  globals: {
+    JSX: true
   }
 };
