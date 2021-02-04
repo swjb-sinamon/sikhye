@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
@@ -42,51 +42,80 @@ const PaginationItem = styled.li<{ active?: boolean }>`
 
 interface PaginationProps {
   readonly onPageChange: (currentOffset: number) => void;
-  readonly pageNumber: number[];
+  readonly dataCount: number;
+  readonly pageLimit: number;
 }
 
-const Pagination: React.FC<PaginationProps> = ({ onPageChange, pageNumber }) => {
+const PAGE_PER_GROUP = 5; // 한 그룹당 표시되는 페이지 개수
+
+const PTest: React.FC<PaginationProps> = ({ onPageChange, dataCount, pageLimit }) => {
+  const [numberComponents, setNumberComponents] = useState<JSX.Element[]>([]);
+
   const [offset, setOffset] = useState<number>(1);
+  const pageCount = Math.ceil(dataCount / pageLimit);
+
+  const maxPageGroupCount = Math.ceil(pageCount / PAGE_PER_GROUP);
+  const [pageGroup, setPageGroup] = useState<number>(1);
 
   const onPrevClick = () => {
-    if (offset === 1) {
-      onPageChange(1);
+    if (pageGroup === 1) {
+      setPageGroup(1);
       return;
     }
-    setOffset((current) => {
-      onPageChange(current - 1);
+
+    setPageGroup((current) => {
+      const prevOffset = (current - 1) * PAGE_PER_GROUP;
+      setOffset(prevOffset);
+      onPageChange(prevOffset);
       return current - 1;
     });
   };
 
   const onNextClick = () => {
-    if (offset === pageNumber.length) {
-      onPageChange(pageNumber.length);
+    if (pageGroup === maxPageGroupCount) {
       return;
     }
-    setOffset((current) => {
-      onPageChange(current + 1);
+
+    setPageGroup((current) => {
+      const nextOffset = (current + 1) * PAGE_PER_GROUP;
+      setOffset(nextOffset);
+      onPageChange(nextOffset);
       return current + 1;
     });
   };
+
+  useEffect(() => {
+    setNumberComponents([]);
+
+    for (
+      let page = (pageGroup - 1) * PAGE_PER_GROUP;
+      page < Math.min(pageCount, pageGroup * PAGE_PER_GROUP);
+      page += 1
+    ) {
+      setNumberComponents((current) => [
+        ...current,
+        <PaginationItem
+          key={page + 1}
+          onClick={() => {
+            setOffset(page + 1);
+            onPageChange(page + 1);
+          }}
+          active={page + 1 === offset}
+        >
+          {page + 1}
+        </PaginationItem>
+      ]);
+    }
+  }, [offset, pageGroup, pageCount, maxPageGroupCount]);
 
   return (
     <PaginationWrapper>
       <PaginationItem onClick={onPrevClick}>
         <FontAwesomeIcon icon={faAngleLeft} /> 이전
       </PaginationItem>
-      {pageNumber.map((pageNum) => (
-        <PaginationItem
-          key={pageNum}
-          onClick={() => {
-            setOffset(pageNum);
-            onPageChange(pageNum);
-          }}
-          active={pageNum === offset}
-        >
-          {pageNum}
-        </PaginationItem>
-      ))}
+
+      {numberComponents.map((i) => i)}
+
       <PaginationItem onClick={onNextClick}>
         다음 <FontAwesomeIcon icon={faAngleRight} />
       </PaginationItem>
@@ -94,4 +123,4 @@ const Pagination: React.FC<PaginationProps> = ({ onPageChange, pageNumber }) => 
   );
 };
 
-export default Pagination;
+export default PTest;
