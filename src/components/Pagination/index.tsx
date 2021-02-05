@@ -77,7 +77,7 @@ const Pagination: React.FC<PaginationProps> = ({ onPageChange, dataCount, pageLi
     }
 
     setPageGroup((current) => {
-      const nextOffset = Math.min(pageCount, (current + 1) * PAGE_PER_GROUP);
+      const nextOffset = (current + 1) * PAGE_PER_GROUP - (PAGE_PER_GROUP - 1);
       setOffset(nextOffset);
       onPageChange(nextOffset);
       return current + 1;
