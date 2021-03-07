@@ -4,7 +4,7 @@ type MessageType = 'success' | 'danger' | 'info' | 'default' | 'warning';
 
 const showToast = (message: string, type: MessageType, title?: string): void => {
   store.addNotification({
-    title: title ?? '',
+    title: title || '',
     message,
     type,
     insert: 'top',
