@@ -6,28 +6,31 @@ export const MainSideBarItem = styled.li`
   flex-direction: row;
   align-items: center;
 
-  padding: 1.2rem 2rem;
+  width: 250px;
+  height: 46px;
+
+  border-radius: 8px;
 
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-out;
 
   &:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 30px rgba(169, 169, 169, 0.4);
-    background-image: linear-gradient(135deg, #fccf31 10%, #f55555 100%);
+    color: white;
+    background-color: var(--color-button);
   }
 
+  margin-bottom: 14px;
+
   @media screen and (max-width: ${SCREEN_SIZE.SCREEN_TABLET}) {
-    transition: none;
-    &:hover {
-      transform: none;
-    }
+    width: 100%;
+    border-radius: 0;
   }
 `;
 
 export const SideBarIconWrapper = styled.div`
   min-width: 28px;
-  height: auto;
+  max-height: 22px;
 
-  margin-right: 10px;
+  margin-right: 20px;
+  margin-left: 24px;
 `;
