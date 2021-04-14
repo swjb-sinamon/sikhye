@@ -1,10 +1,12 @@
 import styled from 'styled-components';
 import SCREEN_SIZE from '../../styles/screen-size';
 
-export const MainSidebar = styled.ul`
+export const MainSidebar = styled.div`
   min-height: 100vh;
   background-color: white;
-  box-shadow: 0 0 30px rgba(169, 169, 169, 0.2);
+
+  font-family: 'NanumSquareRound', sans-serif;
+  font-weight: 700;
 
   display: flex;
   flex-direction: column;
@@ -17,7 +19,9 @@ export const MainSidebar = styled.ul`
 `;
 
 export const SideBarItemList = styled.ul<{ isOpen: boolean }>`
-  display: block;
+  display: flex;
+  justify-content: center;
+
   @media screen and (max-width: ${SCREEN_SIZE.SCREEN_TABLET}) {
     display: ${(props) => (props.isOpen ? 'block' : 'none')};
   }
